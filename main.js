@@ -3,12 +3,20 @@ const quoteText = document.querySelector('.quote-text'),
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  let rand = Math.floor(Math.random() * quotes.length);
-  console.log(quotes[rand]);
-  quoteText.innerText = quotes[rand];
 
-  quoteButton.addEventListener('click', ()=> {
-    rand = Math.floor(Math.random() * quotes.length);
-    quoteText.innerText = quotes[rand];
-  });
+  function showRandomQuote() {
+    let rand = Math.floor(Math.random() * quotes.length);
+    console.log(quotes.length);
+    console.log(quotes[rand]);
+    quoteText.innerText = quotes[rand].phrase;
+  };
+
+  showRandomQuote();
+
+  
+    quoteButton.addEventListener('click', showNextQuote);
+    function showNextQuote() {
+      let rand = Math.floor(Math.random() * quotes.length);
+      quoteText.innerText = quotes[rand].phrase;
+  };
 });
