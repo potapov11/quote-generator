@@ -9,6 +9,14 @@ body {
   margin: 0 auto;
 }
 
+.quote-btns {
+  display: flex;
+}
+
+.genre-btn {
+  width: 30%;
+}
+
 .quote-window {
   margin-top: 150px;
   display: flex;
