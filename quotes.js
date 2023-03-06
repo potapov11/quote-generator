@@ -13,8 +13,3 @@ const quotes = [
   genre: 'thoughts'},
 ];
 
-quotes.forEach(item => {
-  console.log(item.genre)
-});
-
-

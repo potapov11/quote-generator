@@ -1,5 +1,6 @@
 const quoteText = document.querySelector('.quote-text'),
-      quoteButton = document.querySelector('.quote-button');
+      quoteButton = document.querySelector('.quote-button'),
+      quoteBtns = document.querySelectorAll('.genre-btn');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,4 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
       let rand = Math.floor(Math.random() * quotes.length);
       quoteText.innerText = quotes[rand].phrase;
   };
+
+
+/* Сравнение на класс */
+
+  quoteBtns.forEach(quoteBtn => {
+    quoteBtn.addEventListener('click', (e)=> {
+      console.log(e.target.className);
+    
+      
+      
+      // if(e.target.className == quotes.)
+    });
+  });
+
+
+
+
 });
