@@ -1,3 +1,4 @@
+
 const quoteText = document.querySelector('.quote-text'),
       quoteButton = document.querySelector('.quote-button'),
       quoteBtns = document.querySelectorAll('.genre-btn');
@@ -26,11 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   quoteBtns.forEach(quoteBtn => {
     quoteBtn.addEventListener('click', (e)=> {
-      console.log(e.target.className);
-    
-      
-      
-      // if(e.target.className == quotes.)
+      let btnclassName = e.target.className;
+      console.log(btnclassName);
+
+    quotes.forEach(quote => {
+      console.log(quote.genre);
+
+      if(btnclassName ==`genre-btn `+ quote.genre) {
+        // console.log('hello');
+        // let a = `genre-btn `+ quote.genre;
+        // console.log(a);
+      }
+    });      
     });
   });
 
