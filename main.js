@@ -43,7 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
           quoteText.innerText = thoughtsArr[rand].phrase;
         };
         quoteButton.addEventListener('click', showNextThoughtsQuote);
-      }
+      } else if(btnIdName == 'thoughts') {
+          showGenreQuote(thoughtsArr);
+          function showNextThoughtsQuote() {
+            let rand = Math.floor(Math.random() * thoughtsArr.length);
+            quoteText.innerText = thoughtsArr[rand].phrase;
+          };
+          quoteButton.addEventListener('click', showNextThoughtsQuote);
+        }
     });      
     });
   });
