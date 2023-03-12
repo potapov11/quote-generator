@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if(btnIdName == quote.genre) {
         showGenreQuote(thoughts);
       }
+      /* Сравнение на id  */
     });      
     });
   });
