@@ -1,11 +1,9 @@
 
+document.addEventListener('DOMContentLoaded', () => {
 
-const quoteText = document.querySelector('.quote-text'),
+  const quoteText = document.querySelector('.quote-text'),
       quoteButton = document.querySelector('.quote-button'),
       quoteBtns = document.querySelectorAll('.genre-btn');
-
-
-document.addEventListener('DOMContentLoaded', () => {
 
   function showRandomQuote() {
     let rand = Math.floor(Math.random() * quotes.length);
@@ -24,15 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteText.innerText = arg[rand].phrase;
   }
 
-  // function showGenreQuote(a) {
-  //     let rand = Math.floor(Math.random() * a.length);
-  //     quoteText.innerText = a[rand].phrase;
-  // }
-
   showRandomQuote();
 
     quoteButton.addEventListener('click', showNextQuote);
-
 
 /* Сравнение на id  */
 
@@ -44,10 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     quotes.forEach(quote => {
       /* Сравнение на id thoughts */
-      if(btnIdName == quote.genre) {
-        showGenreQuote(thoughts);
+      if(btnIdName == 'thoughts') {
+        showGenreQuote(thoughtsArr);
+        function showNextThoughtsQuote() {
+          let rand = Math.floor(Math.random() * thoughtsArr.length);
+          quoteText.innerText = thoughtsArr[rand].phrase;
+        };
+        quoteButton.addEventListener('click', showNextThoughtsQuote);
       }
-      /* Сравнение на id  */
     });      
     });
   });

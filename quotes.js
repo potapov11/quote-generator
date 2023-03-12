@@ -14,19 +14,25 @@ const quotes = [
   genre: 'thoughts'},
 ];
 
-let thoughts = [];
-
+let thoughtsArr = [];
 quotes.forEach(item => {
   // console.log(item);
   if(item.genre == 'thoughts') {
-    thoughts.push(item);
+    thoughtsArr.push(item);
   }
 });
 
+// let life = [];
+// quotes.forEach(item => {
+//   if(item.genre == 'life') {
+//     life.push(item);
+//   }
+// });
 
-function showGenreQuote() {
-  let rand = Math.floor(Math.random() * thoughts.length);
-  console.log(newGenreArr[rand].phrase);
-}
 
-showGenreQuote(newGenreArr);
+// function showGenreQuote() {
+//   let rand = Math.floor(Math.random() * thoughts.length);
+//   console.log(thoughts[rand].phrase);
+// }
+
+// showGenreQuote(thoughts);
