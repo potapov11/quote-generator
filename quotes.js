@@ -1,5 +1,4 @@
 
-
 const quotes = [
   {phrase: 'Думайте о прошлом, только если воспоминания приятны вам. — Джейн Остин, «Гордость и предубеждение»',
   genre: 'life'},
@@ -15,5 +14,19 @@ const quotes = [
   genre: 'thoughts'},
 ];
 
+let thoughts = [];
+
+quotes.forEach(item => {
+  // console.log(item);
+  if(item.genre == 'thoughts') {
+    thoughts.push(item);
+  }
+});
 
 
+function showGenreQuote() {
+  let rand = Math.floor(Math.random() * thoughts.length);
+  console.log(newGenreArr[rand].phrase);
+}
+
+showGenreQuote(newGenreArr);

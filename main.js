@@ -1,4 +1,5 @@
 
+
 const quoteText = document.querySelector('.quote-text'),
       quoteButton = document.querySelector('.quote-button'),
       quoteBtns = document.querySelectorAll('.genre-btn');
@@ -13,36 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
     quoteText.innerText = quotes[rand].phrase;
   };
 
-  showRandomQuote();
-
-  
-    quoteButton.addEventListener('click', showNextQuote);
-    function showNextQuote() {
-      let rand = Math.floor(Math.random() * quotes.length);
-      quoteText.innerText = quotes[rand].phrase;
+  function showNextQuote() {
+    let rand = Math.floor(Math.random() * quotes.length);
+    quoteText.innerText = quotes[rand].phrase;
   };
 
+  function showGenreQuote(arg) {
+    let rand = Math.floor(Math.random() * arg.length);
+    quoteText.innerText = arg[rand].phrase;
+  }
 
-/* Сравнение на класс */
+  // function showGenreQuote(a) {
+  //     let rand = Math.floor(Math.random() * a.length);
+  //     quoteText.innerText = a[rand].phrase;
+  // }
+
+  showRandomQuote();
+
+    quoteButton.addEventListener('click', showNextQuote);
+
+
+/* Сравнение на id  */
 
   quoteBtns.forEach(quoteBtn => {
     quoteBtn.addEventListener('click', (e)=> {
-      let btnclassName = e.target.className;
-      console.log(btnclassName);
+      console.dir(e);
+      let btnIdName = e.target.id;
+      console.log(btnIdName);
 
     quotes.forEach(quote => {
-      console.log(quote.genre);
-
-      if(btnclassName ==`genre-btn `+ quote.genre) {
-        // console.log('hello');
-        // let a = `genre-btn `+ quote.genre;
-        // console.log(a);
+      /* Сравнение на id thoughts */
+      if(btnIdName == quote.genre) {
+        showGenreQuote(thoughts);
       }
     });      
     });
   });
-
-
-
-
 });
